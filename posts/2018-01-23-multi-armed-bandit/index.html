@@ -84,9 +84,9 @@ The exploration vs exploitation dilemma exists in many aspects of our life. Say,
 <meta property="article:published_time" content="2018-01-23T00:00:00&#43;00:00" />
 <meta property="article:modified_time" content="2018-01-23T00:00:00&#43;00:00" />
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="The Multi-Armed Bandit Problem and Its Solutions"/>
-<meta name="twitter:description" content="
+<meta name="X.com:card" content="summary"/>
+<meta name="X.com:title" content="The Multi-Armed Bandit Problem and Its Solutions"/>
+<meta name="X.com:description" content="
 The algorithms are implemented for Bernoulli bandit in lilianweng/multi-armed-bandit.
 Exploitation vs Exploration
 The exploration vs exploitation dilemma exists in many aspects of our life. Say, your favorite restaurant is right around the corner. If you go there every day, you would be confident of what you will get, but miss the chances of discovering an even better option. If you try new places all the time, very likely you are gonna have to eat unpleasant food from time to time. Similarly, online advisors try to balance between the known most attractive ads and the new ads that might be even more successful."/>
@@ -348,7 +348,7 @@ $$
 </div>
 <p>where $\mathbb{1}$ is a binary indicator function and $N_t(a)$ is how many times the action a has been selected so far, $N_t(a) = \sum_{\tau=1}^t \mathbb{1}[a_\tau = a]$.</p>
 <p>According to the ε-greedy algorithm, with a small probability $\epsilon$ we take a random action, but otherwise (which should be the most of the time, probability 1-$\epsilon$) we pick the best action that we have learnt so far: $\hat{a}^{*}_t = \arg\max_{a \in \mathcal{A}} \hat{Q}_t(a)$.</p>
-<p>Check my toy implementation <a href="https://github.com/lilianweng/multi-armed-bandit/blob/master/solvers.py#L45">here</a>.</p>
+<p>Check my toy implementation <a href="https://github.com/mehrzadian/multi-armed-bandit/blob/master/solvers.py#L45">here</a>.</p>
 <h1 id="upper-confidence-bounds">Upper Confidence Bounds<a hidden class="anchor" aria-hidden="true" href="#upper-confidence-bounds">#</a></h1>
 <p>Random exploration gives us an opportunity to try out options that we have not known much about. However, due to the randomness, it is possible we end up exploring a bad action which we have confirmed in the past (bad luck!). To avoid such inefficient exploration, one approach is to decrease the parameter ε in time and the other is to be optimistic about options with <em>high uncertainty</em> and thus to prefer actions for which we haven&rsquo;t had a confident value estimation yet. Or in other words, we favor exploration of actions with a strong potential to have a optimal value.</p>
 <p>The Upper Confidence Bounds (UCB) algorithm measures this potential by an upper confidence bound of the reward value, $\hat{U}_t(a)$, so that the true value is below with bound $Q(a) \leq \hat{Q}_t(a) + \hat{U}_t(a)$ with high probability. The upper bound $\hat{U}_t(a)$ is a function of $N_t(a)$; a larger number of trials $N_t(a)$ should give us a smaller bound $\hat{U}_t(a)$.</p>
@@ -399,7 +399,7 @@ $$
 <p>For example, if we expect the mean reward of every slot machine to be Gaussian as in Fig 2, we can set the upper bound as 95% confidence interval by setting $\hat{U}_t(a)$ to be twice the standard deviation.</p>
 <img src="bern_UCB.png" style="width: 100%;" class="center" />
 <figcaption>Fig. 3. When the expected reward has a Gaussian distribution. $\sigma(a\_i)$ is the standard deviation and $c\sigma(a\_i)$ is the upper confidence bound. The constant $c$ is a adjustable hyperparameter. (Image source: <a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/XX.pdf" target="_blank">UCL RL course lecture 9's slides</a>)</figcaption>
-<p>Check my toy implementation of <a href="https://github.com/lilianweng/multi-armed-bandit/blob/master/solvers.py#L76">UCB1</a> and <a href="https://github.com/lilianweng/multi-armed-bandit/blob/master/solvers.py#L99">Bayesian UCB</a> with Beta prior on θ.</p>
+<p>Check my toy implementation of <a href="https://github.com/mehrzadian/multi-armed-bandit/blob/master/solvers.py#L76">UCB1</a> and <a href="https://github.com/mehrzadian/multi-armed-bandit/blob/master/solvers.py#L99">Bayesian UCB</a> with Beta prior on θ.</p>
 <h1 id="thompson-sampling">Thompson Sampling<a hidden class="anchor" aria-hidden="true" href="#thompson-sampling">#</a></h1>
 <p>Thompson sampling has a simple idea but it works great for solving the multi-armed bandit problem.</p>
 <img src="klay-thompson.jpg" style="width: 80%;" class="center" />
@@ -433,7 +433,7 @@ $$
 <p>Thompson sampling implements the idea of <a href="https://en.wikipedia.org/wiki/Probability_matching">probability matching</a>. Because its reward estimations $\tilde{Q}$ are sampled from posterior distributions, each of these probabilities is equivalent to the probability that the corresponding action is optimal, conditioned on observed history.</p>
 <p>However, for many practical and complex problems, it can be computationally intractable to estimate the posterior distributions with observed true rewards using Bayesian inference. Thompson sampling still can work out if we are able to approximate the posterior distributions using methods like Gibbs sampling, Laplace approximate, and the bootstraps. This <a href="https://arxiv.org/pdf/1707.02038.pdf">tutorial</a> presents a comprehensive review; strongly recommend it if you want to learn more about Thompson sampling.</p>
 <h1 id="case-study">Case Study<a hidden class="anchor" aria-hidden="true" href="#case-study">#</a></h1>
-<p>I implemented the above algorithms in <a href="https://github.com/lilianweng/multi-armed-bandit">lilianweng/multi-armed-bandit</a>. A <a href="https://github.com/lilianweng/multi-armed-bandit/blob/master/bandits.py#L13">BernoulliBandit</a> object can be constructed with a list of random or predefined reward probabilities. The bandit algorithms are implemented as subclasses of <a href="https://github.com/lilianweng/multi-armed-bandit/blob/master/solvers.py#L9">Solver</a>, taking a Bandit object as the target problem. The cumulative regrets are tracked in time.</p>
+<p>I implemented the above algorithms in <a href="https://github.com/mehrzadian/multi-armed-bandit">lilianweng/multi-armed-bandit</a>. A <a href="https://github.com/mehrzadian/multi-armed-bandit/blob/master/bandits.py#L13">BernoulliBandit</a> object can be constructed with a list of random or predefined reward probabilities. The bandit algorithms are implemented as subclasses of <a href="https://github.com/mehrzadian/multi-armed-bandit/blob/master/solvers.py#L9">Solver</a>, taking a Bandit object as the target problem. The cumulative regrets are tracked in time.</p>
 <img src="bandit_experiment.png" style="width: 100%;" class="center" />
 <figcaption>Fig. 4. The result of a small experiment on solving a Bernoulli bandit with K = 10 slot machines with reward probabilities, {0.0, 0.1, 0.2, ..., 0.9}. Each solver runs 10000 steps.</figcaption>
 (Left) The plot of time step vs the cumulative regrets. 
@@ -481,8 +481,8 @@ $$
 
 
 <div class="share-buttons">
-    <a target="_blank" rel="noopener noreferrer" aria-label="share The Multi-Armed Bandit Problem and Its Solutions on twitter"
-        href="https://twitter.com/intent/tweet/?text=The%20Multi-Armed%20Bandit%20Problem%20and%20Its%20Solutions&amp;url=https%3a%2f%2fmehrzadian.github.io%2fposts%2f2018-01-23-multi-armed-bandit%2f&amp;hashtags=exploration%2cmath-heavy%2creinforcement-learning">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share The Multi-Armed Bandit Problem and Its Solutions on X.com"
+        href="https://X.com.com/intent/tweet/?text=The%20Multi-Armed%20Bandit%20Problem%20and%20Its%20Solutions&amp;url=https%3a%2f%2fmehrzadian.github.io%2fposts%2f2018-01-23-multi-armed-bandit%2f&amp;hashtags=exploration%2cmath-heavy%2creinforcement-learning">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />

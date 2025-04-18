@@ -82,9 +82,9 @@ If you are like me, entering into the field of deep learning with experience in 
 <meta property="article:published_time" content="2019-03-14T00:00:00&#43;00:00" />
 <meta property="article:modified_time" content="2019-03-14T00:00:00&#43;00:00" />
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Are Deep Neural Networks Dramatically Overfitted?"/>
-<meta name="twitter:description" content="
+<meta name="X.com:card" content="summary"/>
+<meta name="X.com:title" content="Are Deep Neural Networks Dramatically Overfitted?"/>
+<meta name="X.com:description" content="
 [Updated on 2019-05-27: add the section on Lottery Ticket Hypothesis.]
 If you are like me, entering into the field of deep learning with experience in traditional machine learning, you may often ponder over this question: Since a typical deep neural network has so many parameters and training error can easily be perfect, it should surely suffer from substantial overfitting. How could it be ever generalized to out-of-sample data points?"/>
 
@@ -499,7 +499,7 @@ $$
 <p>Only training the small &ldquo;winning ticket&rdquo; subset of parameters with the initial values as found in step 1, the model is able to achieve the same level of accuracy as in step 2. It turns out a large parameter space is not needed in the final solution representation, but needed for training as it provides a big pool of initialization configs of many much smaller subnetworks.</p>
 <p>The lottery ticket hypothesis opens a new perspective about interpreting and dissecting deep neural network results. Many interesting following-up works are on the way.</p>
 <h1 id="experiments">Experiments<a hidden class="anchor" aria-hidden="true" href="#experiments">#</a></h1>
-<p>After seeing all the interesting findings above, it should be pretty fun to reproduce them. Some results are easily to reproduce than others. Details are described below. My code is available on github <a href="https://github.com/lilianweng/generalization-experiment">lilianweng/generalization-experiment</a>.</p>
+<p>After seeing all the interesting findings above, it should be pretty fun to reproduce them. Some results are easily to reproduce than others. Details are described below. My code is available on github <a href="https://github.com/mehrzadian/generalization-experiment">lilianweng/generalization-experiment</a>.</p>
 <p><strong>New Risk Curve for DL Models</strong></p>
 <p>This is the trickiest one to reproduce. The authors did give me a lot of good advice and I appreciate it a lot. Here are a couple of noticeable settings in their experiments:</p>
 <ul>
@@ -513,7 +513,7 @@ $$
 <img src="risk_curve_loss-mse_sample-4000_epoch-500.png" style="width: 100%;" class="center" />
 <br />
 <p><strong>Layers are not Created Equal</strong></p>
-<p>This one is fairly easy to reproduce. See my implementation <a href="https://github.com/lilianweng/generalization-experiment/blob/master/layer_equality.py">here</a>.</p>
+<p>This one is fairly easy to reproduce. See my implementation <a href="https://github.com/mehrzadian/generalization-experiment/blob/master/layer_equality.py">here</a>.</p>
 <p>In the first experiment, I used a three-layer fc networks with 256 units in each layer. Layer 0 is the input layer while layer 3 is the output. The network is trained on MNIST for 100 epochs.</p>
 <img src="layer_equality_256x3.png" style="width: 100%;" class="center" />
 <p>In the second experiment, I used a four-layer fc networks with 128 units in each layer. Other settings are the same as experiment 1.</p>
@@ -522,7 +522,7 @@ $$
 <p><strong>Intrinsic Dimension Measurement</strong></p>
 <p>To correctly map the $d$-dimensional subspace to the full parameter space, the projection matrix $\mathbf{P}$ should have orthogonal columns. Because the production $\mathbf{P}\theta^{(d)}$ is the sum of columns of $\mathbf{P}$ scaled by corresponding scalar values in the $d$-dim vector, $\sum_{i=1}^d \theta^{(d)}_i \mathbf{P}^\top_{(:,i)}$, it is better to fully utilize the subspace with orthogonal columns in $\mathbf{P}$.</p>
 <p>My implementation follows a naive approach by sampling a large matrix with independent entries from a standard normal distribution. The columns are expected to be independent in a high dimension space and thus to be orthogonal. This works when the dimension is not too large. When exploring with a large $d$, there are methods for creating sparse projection matrices, which is what the intrinsic dimension paper suggested.</p>
-<p>Here are experiment runs on two networks: (left) a two-layer fc network with 64 units in each layer and (right) a one-layer fc network with 128 hidden units, trained on 10% of MNIST. For every $d$, the model is trained for 100 epochs. See the <a href="https://github.com/lilianweng/generalization-experiment/blob/master/intrinsic_dimensions.py">code</a> <a href="https://github.com/lilianweng/generalization-experiment/blob/master/intrinsic_dimensions_measurement.py">here</a>.</p>
+<p>Here are experiment runs on two networks: (left) a two-layer fc network with 64 units in each layer and (right) a one-layer fc network with 128 hidden units, trained on 10% of MNIST. For every $d$, the model is trained for 100 epochs. See the <a href="https://github.com/mehrzadian/generalization-experiment/blob/master/intrinsic_dimensions.py">code</a> <a href="https://github.com/mehrzadian/generalization-experiment/blob/master/intrinsic_dimensions_measurement.py">here</a>.</p>
 <img src="intrinsic-dimension-net-64-64-and-128.png" style="width: 100%;" class="center" />
 <hr>
 <p>Cited as:</p>
@@ -569,8 +569,8 @@ $$
 
 
 <div class="share-buttons">
-    <a target="_blank" rel="noopener noreferrer" aria-label="share Are Deep Neural Networks Dramatically Overfitted? on twitter"
-        href="https://twitter.com/intent/tweet/?text=Are%20Deep%20Neural%20Networks%20Dramatically%20Overfitted%3f&amp;url=https%3a%2f%2fmehrzadian.github.io%2fposts%2f2019-03-14-overfit%2f&amp;hashtags=information-theory%2cfoundation%2clearning-dynamics">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Are Deep Neural Networks Dramatically Overfitted? on X.com"
+        href="https://X.com.com/intent/tweet/?text=Are%20Deep%20Neural%20Networks%20Dramatically%20Overfitted%3f&amp;url=https%3a%2f%2fmehrzadian.github.io%2fposts%2f2019-03-14-overfit%2f&amp;hashtags=information-theory%2cfoundation%2clearning-dynamics">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />

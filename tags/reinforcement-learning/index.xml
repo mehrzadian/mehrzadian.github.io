@@ -209,8 +209,8 @@
       
       <guid>https://mehrzadian.github.io/posts/2018-05-05-drl-implementation/</guid>
       <description>&lt;!-- Let&#39;s see how to implement a number of classic deep reinforcement learning models in code. --&gt;
-&lt;p&gt;The full implementation is available in &lt;a href=&#34;https://github.com/lilianweng/deep-reinforcement-learning-gym&#34;&gt;lilianweng/deep-reinforcement-learning-gym&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;In the previous two posts, I have introduced the algorithms of many deep reinforcement learning models. Now it is the time to get our hands dirty and practice how to implement the models in the wild. The implementation is gonna be built in Tensorflow and OpenAI &lt;a href=&#34;https://github.com/openai/gym&#34;&gt;gym&lt;/a&gt; environment. The full version of the code in this tutorial is available in &lt;a href=&#34;https://github.com/lilianweng/deep-reinforcement-learning-gym&#34;&gt;[lilian/deep-reinforcement-learning-gym]&lt;/a&gt;.&lt;/p&gt;</description>
+&lt;p&gt;The full implementation is available in &lt;a href=&#34;https://github.com/mehrzadian/deep-reinforcement-learning-gym&#34;&gt;lilianweng/deep-reinforcement-learning-gym&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In the previous two posts, I have introduced the algorithms of many deep reinforcement learning models. Now it is the time to get our hands dirty and practice how to implement the models in the wild. The implementation is gonna be built in Tensorflow and OpenAI &lt;a href=&#34;https://github.com/openai/gym&#34;&gt;gym&lt;/a&gt; environment. The full version of the code in this tutorial is available in &lt;a href=&#34;https://github.com/mehrzadian/deep-reinforcement-learning-gym&#34;&gt;[lilian/deep-reinforcement-learning-gym]&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>

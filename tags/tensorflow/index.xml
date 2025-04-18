@@ -14,8 +14,8 @@
       
       <guid>https://mehrzadian.github.io/posts/2018-05-05-drl-implementation/</guid>
       <description>&lt;!-- Let&#39;s see how to implement a number of classic deep reinforcement learning models in code. --&gt;
-&lt;p&gt;The full implementation is available in &lt;a href=&#34;https://github.com/lilianweng/deep-reinforcement-learning-gym&#34;&gt;lilianweng/deep-reinforcement-learning-gym&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;In the previous two posts, I have introduced the algorithms of many deep reinforcement learning models. Now it is the time to get our hands dirty and practice how to implement the models in the wild. The implementation is gonna be built in Tensorflow and OpenAI &lt;a href=&#34;https://github.com/openai/gym&#34;&gt;gym&lt;/a&gt; environment. The full version of the code in this tutorial is available in &lt;a href=&#34;https://github.com/lilianweng/deep-reinforcement-learning-gym&#34;&gt;[lilian/deep-reinforcement-learning-gym]&lt;/a&gt;.&lt;/p&gt;</description>
+&lt;p&gt;The full implementation is available in &lt;a href=&#34;https://github.com/mehrzadian/deep-reinforcement-learning-gym&#34;&gt;lilianweng/deep-reinforcement-learning-gym&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In the previous two posts, I have introduced the algorithms of many deep reinforcement learning models. Now it is the time to get our hands dirty and practice how to implement the models in the wild. The implementation is gonna be built in Tensorflow and OpenAI &lt;a href=&#34;https://github.com/openai/gym&#34;&gt;gym&lt;/a&gt; environment. The full version of the code in this tutorial is available in &lt;a href=&#34;https://github.com/mehrzadian/deep-reinforcement-learning-gym&#34;&gt;[lilian/deep-reinforcement-learning-gym]&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mehrzadian.github.io/posts/2017-07-22-stock-rnn-part-2/</guid>
-      <description>&lt;!-- This post is a continued tutorial for how to build a recurrent neural network using Tensorflow to predict stock market prices. Part 2 attempts to predict prices of multiple stocks using embeddings. The full working code is available in [lilianweng/stock-rnn](https://github.com/lilianweng/stock-rnn). --&gt;
+      <description>&lt;!-- This post is a continued tutorial for how to build a recurrent neural network using Tensorflow to predict stock market prices. Part 2 attempts to predict prices of multiple stocks using embeddings. The full working code is available in [lilianweng/stock-rnn](https://github.com/mehrzadian/stock-rnn). --&gt;
 &lt;p&gt;In the Part 2 tutorial, I would like to continue the topic on stock price prediction and to endow the recurrent neural network that I have built in &lt;a href=&#34;https://mehrzadian.github.io/posts/2017-07-08-stock-rnn-part-1/&#34;&gt;Part 1&lt;/a&gt; with the capability of responding to multiple stocks. In order to distinguish the patterns associated with different price sequences, I use the stock symbol embedding vectors as part of the input.&lt;/p&gt;</description>
     </item>
     
@@ -34,8 +34,8 @@
       <pubDate>Sat, 08 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mehrzadian.github.io/posts/2017-07-08-stock-rnn-part-1/</guid>
-      <description>&lt;!-- This post is a tutorial for how to build a recurrent neural network using Tensorflow to predict stock market prices. Part 1 focuses on the prediction of S&amp;P 500 index. The full working code is available in [lilianweng/stock-rnn](https://github.com/lilianweng/stock-rnn). --&gt;
-&lt;p&gt;This is a tutorial for how to build a recurrent neural network using Tensorflow to predict stock market prices. The full working code is available in &lt;a href=&#34;https://github.com/lilianweng/stock-rnn&#34;&gt;github.com/lilianweng/stock-rnn&lt;/a&gt;. If you don&amp;rsquo;t know what is recurrent neural network or LSTM cell, feel free to check &lt;a href=&#34;https://mehrzadian.github.io/posts/2017-06-21-overview/#recurrent-neural-network&#34;&gt;my previous post&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;!-- This post is a tutorial for how to build a recurrent neural network using Tensorflow to predict stock market prices. Part 1 focuses on the prediction of S&amp;P 500 index. The full working code is available in [lilianweng/stock-rnn](https://github.com/mehrzadian/stock-rnn). --&gt;
+&lt;p&gt;This is a tutorial for how to build a recurrent neural network using Tensorflow to predict stock market prices. The full working code is available in &lt;a href=&#34;https://github.com/mehrzadian/stock-rnn&#34;&gt;github.com/lilianweng/stock-rnn&lt;/a&gt;. If you don&amp;rsquo;t know what is recurrent neural network or LSTM cell, feel free to check &lt;a href=&#34;https://mehrzadian.github.io/posts/2017-06-21-overview/#recurrent-neural-network&#34;&gt;my previous post&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>
